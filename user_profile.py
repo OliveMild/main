@@ -1,0 +1,27 @@
+class UserProfileError(Exception):
+    pass
+
+
+class UserProfile:
+    _VALID_FIELDS = {"username", "email"}
+
+    @staticmethod
+    def _validate_username(username: str) -> None:
+        if not (3 <= len(username) <= 30):
+            raise UserProfileError("Username must be between 3 and 30 characters.")
+
+    def __init__(self, username: str, email: str) -> None:
+        self._validate_username(username)
+        self.username = username
+        self.email = email.lower()
+
+    def update(self, **kwargs) -> None:
+        unknown = set(kwargs) - self._VALID_FIELDS
+        if unknown:
+            fields = ", ".join(sorted(unknown))
+            raise UserProfileError(f"Unknown profile field(s): {fields}")
+        if "username" in kwargs:
+            self._validate_username(kwargs["username"])
+            self.username = kwargs["username"]
+        if "email" in kwargs:
+            self.email = kwargs["email"].lower()
