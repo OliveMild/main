@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+*.pyo
+feedback_data.json
