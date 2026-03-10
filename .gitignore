@@ -1,0 +1,3 @@
+__pycache__/
+*.py[cod]
+feed_data.json
