@@ -1,1 +1,21 @@
 # main
+
+A simple Python "Hello World" repository.
+
+## Requirements
+
+- Python 3
+
+## Usage
+
+Run the script with:
+
+```bash
+python hello.py
+```
+
+This will print:
+
+```
+Hello World
+```
