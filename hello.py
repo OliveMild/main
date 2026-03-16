@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os
 
 if __name__ == "__main__":
-    print("Hello World")
+    name = os.environ.get("NAME", "World")
+    print(f"Hello, {name}!")
