@@ -1,0 +1,39 @@
+name: Repetitive Task
+description: Template for commonly repeated tasks in this repository
+title: "[Task]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request a commonly repeated task.
+  - type: dropdown
+    id: task-type
+    attributes:
+      label: Task Type
+      description: What type of task is this?
+      options:
+        - Add hello world script
+        - Add draft issue functionality
+        - Update existing script
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe what you need done.
+      placeholder: e.g. Add a hello world script that prints a greeting
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: List the criteria that must be met for this task to be considered complete.
+      placeholder: |
+        - [ ] Script runs without errors
+        - [ ] Output matches expected result
+    validations:
+      required: false
